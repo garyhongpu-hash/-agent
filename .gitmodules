@@ -1,0 +1,3 @@
+[submodule ".claude/skills/wewrite"]
+	path = .claude/skills/wewrite
+	url = https://github.com/oaker-io/wewrite.git
