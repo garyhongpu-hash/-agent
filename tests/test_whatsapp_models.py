@@ -33,6 +33,7 @@ def test_screenshot_request_defaults():
     req = ScreenshotRequest(text="hi")
     assert req.width == 420
     assert req.contact_name is None
+    assert req.phone_style == "iphone"
 
 
 def test_screenshot_request_width_bounds():

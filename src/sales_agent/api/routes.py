@@ -56,5 +56,5 @@ async def whatsapp_screenshot(req: ScreenshotRequest):
         raise HTTPException(status_code=502, detail=f"对话解析失败: {e}")
     if not conv.messages:
         raise HTTPException(status_code=422, detail="未能从输入中识别到聊天对话")
-    png = render_conversation(conv, width=req.width)
+    png = render_conversation(conv, width=req.width, phone_style=req.phone_style)
     return Response(content=png, media_type="image/png")

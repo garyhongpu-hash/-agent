@@ -32,6 +32,10 @@ class ScreenshotRequest(BaseModel):
         default=None, description="可选，覆盖从文本中解析出的联系人名称"
     )
     width: int = Field(default=420, ge=320, le=1080, description="输出图片宽度（像素）")
+    phone_style: Literal["iphone", "android", "none"] = Field(
+        default="iphone",
+        description="手机外壳样式：iphone（带 Dynamic Island）/ android（带挖孔）/ none（仅聊天区域）",
+    )
 
 
 class ExtractResponse(BaseModel):
