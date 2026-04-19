@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     agent_model: str = "claude-sonnet-4-6"
     max_pages_to_crawl: int = 10
     crawl_timeout: int = 30
+    whatsapp_font_path: str | None = None
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 

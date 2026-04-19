@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from sales_agent.api.routes import router
 
@@ -9,3 +12,10 @@ app = FastAPI(
 )
 
 app.include_router(router)
+
+_WHATSAPP_STATIC_DIR = Path(__file__).parent / "whatsapp" / "static"
+app.mount(
+    "/whatsapp",
+    StaticFiles(directory=_WHATSAPP_STATIC_DIR, html=True),
+    name="whatsapp",
+)
